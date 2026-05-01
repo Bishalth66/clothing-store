@@ -12,13 +12,13 @@ const Navbar = () => {
     <div className=" font-primary w-full max-h-[12vh] px-10 py-2 flex justify-between items-center">
 
          {/* Logo */}
-      <div className="relative w-26 h-20">
+      <div className="relative w-18 h-16 lg:w-26 lg:h-20">
         <Image src={"/aura-logo.png"} fill alt="" />
       </div>
 
       {/* Navigations */}
       <nav className="hidden lg:block ">
-        <ul className="flex gap-6 font-bold uppercase">
+        <ul className="flex gap-6 font-semibold uppercase">
           {navList.map((item) => (
             <li key={item.label}>{item.label}</li>
           ))}
