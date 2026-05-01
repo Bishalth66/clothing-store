@@ -5,7 +5,6 @@ const navList = [
   { label: "Home", link: "/home" },
   { label: "Shop", link: "/shop" },
   { label: "Products", link: "/products" },
-  { label: "Blog", link: "/blog" },
   { label: "Contact", link: "/contact" },
 ];
 const Navbar = () => {
@@ -13,13 +12,13 @@ const Navbar = () => {
     <div className=" font-primary w-full max-h-[12vh] px-10 py-2 flex justify-between items-center">
 
          {/* Logo */}
-      <div className="relative w-24 h-16">
-        <Image src={"/logo.png"} fill alt="" />
+      <div className="relative w-26 h-20">
+        <Image src={"/aura-logo.png"} fill alt="" />
       </div>
 
       {/* Navigations */}
       <nav className="hidden lg:block ">
-        <ul className="flex gap-6 font-medium">
+        <ul className="flex gap-6 font-bold uppercase">
           {navList.map((item) => (
             <li key={item.label}>{item.label}</li>
           ))}

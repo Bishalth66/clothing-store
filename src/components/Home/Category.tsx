@@ -1,8 +1,10 @@
-import React from 'react'
+import Image from "next/image"
 
 const Category = () => {
   return (
-    <div>Category</div>
+    <div className="w-full h-screen px-10 py-10 flex justify-between">
+      
+    </div>
   )
 }
 
