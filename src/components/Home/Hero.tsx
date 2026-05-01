@@ -1,0 +1,18 @@
+import Image from "next/image";
+
+const Hero = () => {
+  return (
+    <div className="w-full h-[90vh] font-primary">
+      <div className="relative w-full h-full">
+        <video src={'/hero.mp4'} autoPlay muted loop className="w-full h-full object-cover" ></video>
+        <div className="absolute inset-0 w-full h-full flex flex-col justify-center  max-w-7xl mx-auto ">
+            <h1 className="text-white text-8xl font-bold tracking-tight">Effortless Style, <br></br>Every Day.</h1>
+            <button className="bg-white py-3 px-6 max-w-fit mt-4 uppercase rounded-md"> Shop Now</button>
+        </div>
+
+      </div>
+    </div>
+  );
+};
+
+export default Hero;
