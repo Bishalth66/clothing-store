@@ -1,9 +1,11 @@
 "use client";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { authClient } from "@/lib/authClient";
 import { loginSchema, LoginData } from "@/lib/validation/login";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 import {
   Card,
   CardContent,
@@ -23,6 +25,7 @@ export function LoginForm({
   className,
   ...props
 }: React.ComponentProps<"div">) {
+  const router =useRouter();
   const {
     register,
     formState: { errors, isSubmitting },
@@ -32,8 +35,13 @@ export function LoginForm({
     mode: "onBlur",
   });
 
-  const onLogin = (formData: LoginData) => {
-    console.log(formData);
+  const onLogin = async(formData: LoginData) => {
+    
+   const {data,error} = await authClient.signIn.email({
+    email:formData.email,
+    password:formData.password,
+   });
+   if(!error) router.push('/dashboard');
   };
 
   return (

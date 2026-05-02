@@ -1,4 +1,5 @@
 "use client";
+import { authClient } from "@/lib/authClient";
 import { useForm } from "react-hook-form";
 import { SignupData, signupSchema } from "@/lib/validation/signup";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -28,8 +29,19 @@ export function SignupForm({ ...props }: React.ComponentProps<typeof Card>) {
     mode: "onBlur",
   });
 
-  const onSignup = (formData: SignupData) => {
-    console.log(formData);
+  const onSignup = async(formData: SignupData) => {
+    const {data,error} = await authClient.signUp.email({
+      email:formData.email,
+      password:formData.password,
+      name:formData.full_name
+    });
+
+    if(data){
+      console.log("Success!!");
+    }
+    if(error){
+      console.log("Sorry!!");
+    }
   };
 
   return (
