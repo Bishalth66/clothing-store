@@ -9,7 +9,7 @@ const navList = [
 ];
 const Navbar = () => {
   return (
-    <div className=" font-primary w-full max-h-[12vh] px-10 py-2 flex justify-between items-center">
+    <div className=" font-primary w-full max-h-[12vh] px-10 py-2 flex justify-between items-center shadow-sm">
 
          {/* Logo */}
       <div className="relative w-18 h-16 lg:w-26 lg:h-20">
