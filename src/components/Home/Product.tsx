@@ -34,7 +34,7 @@ export default function Product() {
   return (
     <>
       <div className='w-full h-full pl-8 py-26 font-primary'>
-      <h2 className='text-5xl font-semibold pb-10 pl-2'>Most Selling Product</h2>
+      <h2 className='text-4xl font-semibold pb-10 pl-2'>Most Selling Product</h2>
       <Swiper
         slidesPerView={3.1}
         spaceBetween={30}
@@ -42,10 +42,10 @@ export default function Product() {
       >
         {products.map((item,index)=>(
           <SwiperSlide key={index} className='w-full h-96'>
-          <div className='aspect-3/4 relative max-h-120 w-full'>
+          <div className='aspect-3/4 relative max-h-96 w-full'>
             <Image src={item.url} alt='' fill className='object-cover '/>
           </div>
-          <h3 className='text-2xl font-medium tracking-tight pt-4'>{item.name}</h3>
+          <h3 className='text-xl font-medium tracking-tight pt-4'>{item.name}</h3>
           <p className='font-secondary'>$ {item.price}</p>
         </SwiperSlide>
         ))
