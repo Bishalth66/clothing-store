@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { CheckCircle2, RotateCcw, Truck } from "lucide-react";
+
 
 const categories = [
   {
@@ -22,27 +22,10 @@ const categories = [
   },
 ];
 
-const services = [
-  {
-    title: "Fast delivery",
-    text: "Free shipping on Nepal orders over $50.",
-    icon: Truck,
-  },
-  {
-    title: "Easy returns",
-    text: "Exchange sizes and styles within 14 days.",
-    icon: RotateCcw,
-  },
-  {
-    title: "Quality checked",
-    text: "Every piece is reviewed before it ships.",
-    icon: CheckCircle2,
-  },
-];
-
 const Category = () => {
   return (
-    <section className="w-full px-5 pb-16 font-primary sm:px-8 lg:px-10 lg:pb-24">
+    <section className="w-full px-5 pb-16 font-primary sm:px-8 lg:px-10 my-20">
+     
       <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
         <div>
           <p className="mb-2 text-sm font-semibold uppercase tracking-[0.2em] text-neutral-500">
@@ -84,7 +67,7 @@ const Category = () => {
         ))}
       </div>
 
-      <div className="mt-16 grid overflow-hidden rounded-md bg-neutral-950 text-white lg:grid-cols-[1.1fr_0.9fr]">
+      <div className="mt-26 grid overflow-hidden rounded-md bg-neutral-950 text-white lg:grid-cols-[1.1fr_0.9fr]">
         <div className="px-6 py-12 sm:px-10 lg:py-16">
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-white/60">
             New season
@@ -111,26 +94,7 @@ const Category = () => {
         </div>
       </div>
 
-      <div className="mt-10 grid gap-4 md:grid-cols-3">
-        {services.map((service) => {
-          const Icon = service.icon;
-
-          return (
-            <div
-              key={service.title}
-              className="flex items-start gap-4 border border-neutral-200 p-5"
-            >
-              <Icon className="mt-1 h-5 w-5 shrink-0" aria-hidden="true" />
-              <div>
-                <h3 className="font-semibold">{service.title}</h3>
-                <p className="mt-1 text-sm leading-6 text-neutral-600">
-                  {service.text}
-                </p>
-              </div>
-            </div>
-          );
-        })}
-      </div>
+      
     </section>
   );
 };
