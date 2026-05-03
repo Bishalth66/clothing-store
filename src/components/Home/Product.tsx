@@ -2,7 +2,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/pagination";
+
 import Image from "next/image";
 
 const products = [
@@ -35,7 +35,13 @@ export default function Product() {
         <h2 className="text-4xl font-semibold pb-10 pl-2">
           Most Selling Product
         </h2>
-        <Swiper slidesPerView={3.1} spaceBetween={30} className="mySwiper ">
+        <Swiper 
+          slidesPerView={3.1} 
+          spaceBetween={30} 
+          className="mySwiper"
+          observer={true}
+          observeParents={true}
+        >
           {products.map((item, index) => (
             <SwiperSlide key={index} className="w-full h-96">
               <div className="aspect-3/4 relative max-h-96 w-full">
